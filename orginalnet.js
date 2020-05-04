@@ -65,7 +65,7 @@ looker.plugins.visualizations.add({
 				AS groups FROM ? GROUP BY label', [res1]);
 	};
 
-	var res = json2group(input, ["login_id","[ip]"]);
+	var res = json2group(input, ["amData1.login_id","[amData1.ip]"]);
    	console.log('hello',res)
 		
 		let groups = Object.create(null);
