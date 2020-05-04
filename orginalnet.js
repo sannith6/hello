@@ -71,7 +71,7 @@ looker.plugins.visualizations.add({
 		}, this)._.push(a.style);
 	}, { _: result });
 	   
-	console.log(result);
+	console.log('hello',result);
 		
 		let groups = Object.create(null);
 
