@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
 			names: row[user_name].value,
 			child: row[login_id].value,
 			//ip: row[ips].value,
-			date: row[start_dte].value,
+			date: row[start_date].value,
 			value: 1
 		});
 		
