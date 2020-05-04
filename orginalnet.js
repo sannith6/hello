@@ -35,9 +35,9 @@ looker.plugins.visualizations.add({
 	
 	user_name = config.query_fields.dimensions[0].name;
 	login_id = config.query_fields.dimensions[1].name;
-    ips = config.query_fields.dimensions[2].name;
+    //ips = config.query_fields.dimensions[2].name;
     start_date = config.query_fields.dimensions[3].name;
-    end_date = config.query_fields.dimensions[4].name;
+    //end_date = config.query_fields.dimensions[4].name;
 
 	
 	amData1 = [];
@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
 			names: row[user_name].value,
 		  child: xyz,
 		  value: 1,
-		  ips: row[ips].value,
+		  //ips: row[ips].value,
 		  date: row[start_date].value
 		});
 		
