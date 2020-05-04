@@ -47,7 +47,7 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-			{child: row[login_id].value,ip: row[ips].value,value: 1},
+			child: row[login_id].value,row[ips].value,value: 1,
 			value: 1
 		  //date: row[start_dte].value
 		});
