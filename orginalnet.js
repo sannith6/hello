@@ -47,7 +47,9 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-			child: row[login_id].value,row[ips].value,value: 1,
+			child: row[login_id].value,
+			ip: row[ips].value,
+			value: 1,
 			value: 1
 		  //date: row[start_dte].value
 		});
@@ -56,6 +58,15 @@ looker.plugins.visualizations.add({
 	    
 		console.log('amChart data', amData1)
 		
+	function json2group(input, attr){
+			var res1 = alasql('SELECT '+attr[0]+' AS label0,'+attr[1]+' AS label1, \
+				ARRAY({label:'+attr[0]+',groups:_}) AS groups1 FROM ? GROUP BY label0,label1',[input]);
+			return alasql('SELECT label0 AS label, ARRAY({label:label1,groups:groups1}) \
+				AS groups FROM ? GROUP BY label', [res1]);
+	};
+
+	var res = json2group(input, ["login_id","[ip]"]);
+   	console.log('hello',res)
 		
 		let groups = Object.create(null);
 
