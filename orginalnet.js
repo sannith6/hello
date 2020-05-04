@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
 	    
 		console.log('amChart data', amData1)
 		
-		amData2 = amData1.child,{amData1.child}
+		amData2 = amData1.child
 		
 		console.log('amChart data', amData2)
 		
