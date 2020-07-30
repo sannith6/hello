@@ -197,8 +197,8 @@ am4core.ready(function() {
     textBullet.locationX = 1;
     textBullet.dy = - 100;
     textBullet.label.textAlign = "middle";
-    textBullet.tooltip.label.interactionsEnabled = true;
-    textBullet.tooltip.keepTargetHover = true;
+    series.tooltip.label.interactionsEnabled = true;
+    series.tooltip.keepTargetHover = true;
 
     chart.scrollbarX = new am4core.Scrollbar();
     chart.scrollbarX.align = "center"
