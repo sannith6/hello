@@ -175,7 +175,7 @@ am4core.ready(function() {
    
 	
 
-    imageBullet1.tooltip.pointerOrientation = "up";
+    series.tooltip.pointerOrientation = "up";
 
     imageBullet1.background.adapter.add("pointerAngle", (value, target) => {
         if (target.dataItem) {
