@@ -172,7 +172,7 @@ am4core.ready(function() {
     imageBullet1.background.pointerLength = 10
     imageBullet1.tooltipHTML = "{text}";
     
-    imageBullet1.tooltip.label.interactionsEnabled = true;
+    imageBullet1.tooltip.interactionsEnabled = true;
     imageBullet1.tooltip.keepTargetHover = true;
 	
 
