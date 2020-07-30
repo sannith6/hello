@@ -172,8 +172,7 @@ am4core.ready(function() {
     imageBullet1.background.pointerLength = 10
     imageBullet1.tooltipHTML = "{text}";
     
-    imageBullet1.tooltip.interactionsEnabled = true;
-    imageBullet1.tooltip.keepTargetHover = true;
+   
 	
 
     imageBullet1.tooltip.pointerOrientation = "up";
@@ -198,6 +197,8 @@ am4core.ready(function() {
     textBullet.locationX = 1;
     textBullet.dy = - 100;
     textBullet.label.textAlign = "middle";
+    textBullet.tooltip.label.interactionsEnabled = true;
+    textBullet.tooltip.keepTargetHover = true;
 
     chart.scrollbarX = new am4core.Scrollbar();
     chart.scrollbarX.align = "center"
