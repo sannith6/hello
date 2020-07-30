@@ -135,6 +135,8 @@ am4core.ready(function() {
 	minimumDate.setHours( minimumDate.getHours() - 6 ); 
     dateAxis.min = minimumDate.getTime();
     dateAxis.max = maximumDate.getTime();
+    dateAxis.tooltip.label.interactionsEnabled = true;
+    dateAxis.tooltip.keepTargetHover = true;
 	
 	
     let labelTemplate = dateAxis.renderer.labels.template;
@@ -156,7 +158,6 @@ am4core.ready(function() {
     series.columns.template.propertyFields.stroke = "color";
     series.columns.template.strokeOpacity = 0;
     series.columns.template.fillOpacity = 0.6;
-    series.columns.template.tooltipHTML = "{text}";
     let imageBullet1 = series.bullets.push(new am4plugins_bullets.PinBullet());
     imageBullet1.background.radius = 18;
     imageBullet1.locationX = 1;
@@ -172,15 +173,10 @@ am4core.ready(function() {
     imageBullet1.background.pointerBaseWidth = 10;
     imageBullet1.background.pointerLength = 10
     imageBullet1.tooltipHTML = "{text}";
-    imageBullet1.tooltip.label.interactionsEnabled = true;
-    imageBullet1.tooltip.keepTargetHover = true;
-    polygonSeries.calculateVisualCenter = true;
-    polygonSeries.mapPolygons.template.tooltipPosition = "fixed";
     
-    imageBullet1.calculateVisualCenter = true;
-    imageBullet1.mapPolygons.template.tooltipPosition = "fixed";
+ 
 
-    //series.tooltip.pointerOrientation = "up";
+    series.tooltip.pointerOrientation = "orientation";
 
     imageBullet1.background.adapter.add("pointerAngle", (value, target) => {
         if (target.dataItem) {
