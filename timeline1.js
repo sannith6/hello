@@ -71,13 +71,16 @@ for(var row of data) {
         else if (row[c]['value'] === 'FILE') {icons = filemanager;}		
 		else {icons = windows;}
 	
+	var cell = row[queryResponse.fields.dimensions[2].name]
+		xyz = LookerCharts.Utils.htmlForCell(cell);
+	
 	amData.push({
 		category: row[c]['value'],
         start: row[a].value,
         end: row[b].value,
 		color: colour,
 		icon: icons,
-        text: row[c]['value']
+        text: xyz
 		
 	});
 	
@@ -168,7 +171,7 @@ am4core.ready(function() {
     imageBullet1.dy = -2;
     imageBullet1.background.pointerBaseWidth = 10;
     imageBullet1.background.pointerLength = 10
-    imageBullet1.tooltipText = "{text}";
+    imageBullet1.tooltipHTML = "{text}";
 
     series.tooltip.pointerOrientation = "up";
 
