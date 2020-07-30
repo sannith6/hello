@@ -174,6 +174,9 @@ am4core.ready(function() {
     imageBullet1.tooltipHTML = "{text}";
     imageBullet1.tooltip.label.interactionsEnabled = true;
     imageBullet1.tooltip.keepTargetHover = true;
+    
+    imageBullet1.calculateVisualCenter = true;
+    imageBullet1.mapPolygons.template.tooltipPosition = "fixed";
 
     series.tooltip.pointerOrientation = "up";
 
