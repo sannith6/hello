@@ -156,7 +156,7 @@ am4core.ready(function() {
     series.columns.template.propertyFields.stroke = "color";
     series.columns.template.strokeOpacity = 0;
     series.columns.template.fillOpacity = 0.6;
-
+    series.columns.template.tooltipHTML = "{text}";
     let imageBullet1 = series.bullets.push(new am4plugins_bullets.PinBullet());
     imageBullet1.background.radius = 18;
     imageBullet1.locationX = 1;
@@ -180,7 +180,7 @@ am4core.ready(function() {
     imageBullet1.calculateVisualCenter = true;
     imageBullet1.mapPolygons.template.tooltipPosition = "fixed";
 
-    series.tooltip.pointerOrientation = "up";
+    //series.tooltip.pointerOrientation = "up";
 
     imageBullet1.background.adapter.add("pointerAngle", (value, target) => {
         if (target.dataItem) {
