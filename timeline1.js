@@ -135,9 +135,7 @@ am4core.ready(function() {
 	minimumDate.setHours( minimumDate.getHours() - 6 ); 
     dateAxis.min = minimumDate.getTime();
     dateAxis.max = maximumDate.getTime();
-    dateAxis.tooltip.label.interactionsEnabled = true;
-    dateAxis.tooltip.keepTargetHover = true;
-	
+    
 	
     let labelTemplate = dateAxis.renderer.labels.template;
     labelTemplate.verticalCenter = "middle";
@@ -174,9 +172,11 @@ am4core.ready(function() {
     imageBullet1.background.pointerLength = 10
     imageBullet1.tooltipHTML = "{text}";
     
- 
+    imageBullet1.tooltip.label.interactionsEnabled = true;
+    imageBullet1.tooltip.keepTargetHover = true;
+	
 
-    series.tooltip.pointerOrientation = "orientation";
+    imageBullet1.tooltip.pointerOrientation = "up";
 
     imageBullet1.background.adapter.add("pointerAngle", (value, target) => {
         if (target.dataItem) {
