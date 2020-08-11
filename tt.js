@@ -29,33 +29,62 @@ this.clearErrors();
 console.log('updateAsync() data', data)
 console.log('updateAsync() config', config)
 console.log('updateAsync() queryResponse', queryResponse)
+	
+	
+
+
+
+// get the names of the first dimension and measure available in data
+x = config.query_fields.dimensions[0].name;
+y = config.query_fields.measures[1].name;
+z = config.query_fields.dimensions[2].name;
+n = config.query_fields.dimensions[3].name;
+	
+
+
+// build data array for the chart, by iterating over the Looker data object
+var amData = [];
+var colorSet = new am4core.ColorSet();
+for(var row of data) {
+	amData.push({
+		
+		y: row[y].value,
+		x : row[x].value,
+		text: row[z].value,
+		center:row[n].value
+		
+	});
+	
+}
+	
+console.log('amChart data', amData)
 
 var chart = am4core.create("amContainer", am4charts.XYChart);
 // Create chart instance
 //var chart = am4core.create("chartdiv", am4charts.XYChart);
 
 // Add data
-chart.data = [{
-  "y": "1",
-  "x": 1,
-  "text": "[bold]2018 Q1[/]\nThere seems to be some furry animal living in the neighborhood.",
-  "center": "right"
-}, {
-  "y": "2",
-  "x": 1,
-  "text": "[bold]2018 Q2[/]\nWe're now mostly certain it's a fox.",
-  "center": "left"
-}, {
-  "y": "3",
-  "x": 1,
-  "text": "[bold]2018 Q3[/]\nOur dog does not seem to mind the newcomer at all.",
-  "center": "right"
-}, {
-  "y": "4",
-  "x": 1,
-  "text": "[bold]2018 Q4[/]\nThe quick brown fox jumps over the lazy dog.",
-  "center": "left"
-}];
+// chart.data = [{
+//   "y": "1",
+//   "x": 1,
+//   "text": "[bold]2018 Q1[/]\nThere seems to be some furry animal living in the neighborhood.",
+//   "center": "right"
+// }, {
+//   "y": "2",
+//   "x": 1,
+//   "text": "[bold]2018 Q2[/]\nWe're now mostly certain it's a fox.",
+//   "center": "left"
+// }, {
+//   "y": "3",
+//   "x": 1,
+//   "text": "[bold]2018 Q3[/]\nOur dog does not seem to mind the newcomer at all.",
+//   "center": "right"
+// }, {
+//   "y": "4",
+//   "x": 1,
+//   "text": "[bold]2018 Q4[/]\nThe quick brown fox jumps over the lazy dog.",
+//   "center": "left"
+// }];
 
 // Create axes
 var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
