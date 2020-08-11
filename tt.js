@@ -59,7 +59,7 @@ for(var row of data) {
 	
 console.log('amChart data', amData)
 
-var chart = am4core.create("amContainer", am4charts.XYChart);
+let chart = am4core.create("amContainer", am4charts.XYChart);
 // Create chart instance
 //var chart = am4core.create("chartdiv", am4charts.XYChart);
 
