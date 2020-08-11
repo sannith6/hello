@@ -36,7 +36,7 @@ console.log('updateAsync() queryResponse', queryResponse)
 
 // get the names of the first dimension and measure available in data
 x = config.query_fields.dimensions[0].name;
-y = config.query_fields.measures[1].name;
+y = config.query_fields.dimensions[1].name;
 z = config.query_fields.dimensions[2].name;
 n = config.query_fields.dimensions[3].name;
 	
