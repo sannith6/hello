@@ -134,6 +134,7 @@ labelBullet.label.propertyFields.horizontalCenter = "center";
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.lineX.disabled = true;
 chart.cursor.lineY.disabled = true;
+chart.data = amData;
 doneRendering();
 }
 })
